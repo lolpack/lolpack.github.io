@@ -3,8 +3,47 @@ body {
     font-weight: 300;
     color: white;
     background-color: black;
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     text-align: center;
     font-size: 35px;
+}
+
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -50px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.footer-container, .page-wrap:after {
+  height: 50px;
+}
+
+a {
+  color: white;
+}
+
+.github-link {
+  font-size: 10px;
+}
+
+.github-img {
+  height: 20px;
+}
+
+.link-wrapper {
+  display: inline;
 }
 
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
