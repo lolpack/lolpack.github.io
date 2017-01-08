@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lolpack's Pics</title>
+
+<meta name="viewport" content="width=device-width"/>
+<meta name="description" content="Lolpack's Pics"/>
+<meta charset="UTF-8">
+
+<link href="dist/main.css" rel="stylesheet" />
+
+<!-- <link href="main.css" rel="stylesheet" /> -->
+<!-- Core CSS file -->
+<link rel="stylesheet" href="dist/photoswipe.css">
+
+<!-- Skin CSS file (styling of UI - buttons, caption, etc.)
+     In the folder of skin CSS file there are also:
+     - .png and .svg icons sprite,
+     - preloader.gif (for browsers that do not support CSS animations) -->
+<link rel="stylesheet" href="dist/default-skin/default-skin.css">
+
+<!-- Core JS file -->
+<script src="dist/photoswipe.min.js"></script>
+
+<!-- UI JS file -->
+<script src="dist/photoswipe-ui-default.min.js"></script>
+
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body id="top">
+  <h1 class="photos-title fade-in three">I took these photos</h1>
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <button id="btn">Open PhotoSwipe</button>
+
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <!-- Background of PhotoSwipe.
+             It's a separate element, as animating opacity is faster than rgba(). -->
+        <div class="pswp__bg"></div>
+
+        <!-- Slides wrapper with overflow:hidden. -->
+        <div class="pswp__scroll-wrap">
+
+            <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+            <div class="pswp__container">
+                <!-- don't modify these 3 pswp__item elements, data is added later on -->
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+            <div class="pswp__ui pswp__ui--hidden">
+
+                <div class="pswp__top-bar">
+
+                    <!--  Controls are self-explanatory. Order can be changed. -->
+
+                    <div class="pswp__counter"></div>
+
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                    <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                    <!-- element will get class pswp__preloader--active when preloader is running -->
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                          <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+
+              </div>
+
+            </div>
+
+    </div>
+
+
+</body>
+<script type="text/javascript">
+(function() {
+var openPhotoSwipe = function() {
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+
+    // build items array
+    var items = [
+        {
+            src: 'photos/glacier-1.jpg',
+            w: 9330,
+            h: 3154
+        },
+        {
+            src: 'photos/glacier-2.jpg',
+            w: 5144,
+            h: 3154
+        },
+        {
+            src: 'photos/icicle-creek.jpg',
+            w: 3264,
+            h: 2448
+        },
+        {
+            src: 'photos/costa-beach.jpg',
+            w: 3264,
+            h: 2448
+        }
+    ];
+
+    // define options (if needed)
+    var options = {
+       // history & focus options are disabled on CodePen
+        history: false,
+        focus: false,
+
+        showAnimationDuration: 0,
+        hideAnimationDuration: 0
+
+    };
+
+    var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+    gallery.init();
+
+    // When you close, go back to the main page.
+    gallery.listen('close', function() { window.location.href = 'index.html'});
+};
+
+openPhotoSwipe();
+
+document.getElementById('btn').onclick = openPhotoSwipe;
+})();
+</script>
+<script src="dist/photoswipe.js"></script>
+<script src="dist/photoswipe-ui-default.min.js"></script>
+</html>
