@@ -35,6 +35,10 @@ html, body {
   -webkit-text-stroke: 1px black;
 }
 
+.tag-line {
+  font-size: 18px;
+}
+
 .main-links{
   margin: 20px 0;
 }
@@ -95,4 +99,10 @@ a {
   -webkit-animation-delay: 2.5s;
   -moz-animation-delay:2.5s;
   animation-delay: 2.5s;
+}
+
+.fade-in.four {
+  -webkit-animation-delay: 3.5s;
+  -moz-animation-delay:3.5s;
+  animation-delay: 3.5s;
 }
